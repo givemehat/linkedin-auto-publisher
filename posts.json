@@ -2,37 +2,64 @@
   {
     "id": "post-01-drone-docking",
     "title": "Camera-Free TinyML Drone Neural Docking (with Himanshu Patel)",
-    "tags": ["TinyML", "EmbeddedSystems", "Robotics", "Drones", "EdgeAI", "OpenSource"],
+    "tags": [
+      "TinyML",
+      "EmbeddedSystems",
+      "Robotics",
+      "Drones",
+      "EdgeAI",
+      "OpenSource"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/efficient-neural-docking/main/figs/drone_docking_system.jpeg",
     "published": true,
     "buffer_post_id": "6b02002bd864a0110572c0e8",
     "scheduled_for": "2026-11-25T08:50:00.000Z",
-    "content": "Most autonomous drones rely on optical cameras and fiducial markers (like AprilTags) for landing pad docking.\n\nWhile accurate under ideal lighting, cameras create major bottlenecks on lightweight micro-aerial platforms:\n- 5W–15W compute power drain on companion computers (Raspberry Pi/Jetson).\n- Optical failure in low-light, dust, prop-wash, or lens occlusion.\n- Added payload weight that severely shortens flight endurance.\n\nTogether with Himanshu Patel, we built a camera-free TinyML alternative:\n\n🛸 Efficient Multi-Sensor Neural Docking:\nInstead of heavy cameras, we instrumented the airframe with 4 directional infrared (IR) proximity sensors feeding an ultra-compact feedforward neural network.\n\n⚙️ The Engineering Constraints:\n- Quantized down to 8-bit integers (INT8) running on bare-metal microcontrollers (ESP32 / ARM Cortex-M).\n- Flash footprint under 3 KB (<3 KB!).\n- Power consumption under 300 mW (nearly 95% reduction in power compared to companion computers).\n\nOpen-source code, hardware architecture, and firmware benchmarks:\nhttps://github.com/givemehat/efficient-neural-docking\n\nAlways open to connect with developers building at the intersection of TinyML, embedded robotics, and edge AI.\n\n#TinyML #EmbeddedSystems #Robotics #Drones #EdgeAI #OpenSource #DeepLearning"
+    "content": "Most autonomous drones rely on optical cameras and fiducial markers (like AprilTags) for landing pad docking.\n\nWhile accurate under ideal lighting, cameras create major bottlenecks on lightweight micro-aerial platforms:\n- 5W–15W compute power drain on companion computers (Raspberry Pi/Jetson).\n- Optical failure in low-light, dust, prop-wash, or lens occlusion.\n- Added payload weight that severely shortens flight endurance.\n\nTogether with Himanshu Patel, we built a camera-free TinyML alternative:\n\nArchitecture: Multi-Sensor Neural Docking:\nInstead of heavy cameras, we instrumented the airframe with 4 directional infrared (IR) proximity sensors feeding an ultra-compact feedforward neural network.\n\nThe Engineering Constraints:\n- Quantized down to 8-bit integers (INT8) running on bare-metal microcontrollers (ESP32 / ARM Cortex-M).\n- Flash footprint under 3 KB (<3 KB!).\n- Power consumption under 300 mW (nearly 95% reduction in power compared to companion computers).\n\nOpen-source code, hardware architecture, and firmware benchmarks:\nhttps://github.com/givemehat/efficient-neural-docking\n\nAlways open to connect with developers building at the intersection of TinyML, embedded robotics, and edge AI.\n\n#TinyML #EmbeddedSystems #Robotics #Drones #EdgeAI #OpenSource #DeepLearning"
   },
   {
     "id": "post-02-qdms-streaming",
     "title": "Real-time State Streaming (QDMS)",
-    "tags": ["Python", "FastAPI", "React", "Docker", "QuantitativeFinance", "Performance"],
+    "tags": [
+      "Python",
+      "FastAPI",
+      "React",
+      "Docker",
+      "QuantitativeFinance",
+      "Performance"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-03-qdms.png",
     "published": true,
     "buffer_post_id": "6b01fc930247969092fcb8a5",
     "scheduled_for": "2026-11-26T09:46:00.000Z",
-    "content": "Can financial market crashes be modeled as an open quantum system experiencing decoherence?\n\nThat was the premise behind building QDMS (Quantum-Dissipative Market Simulator).\n\nFrom a software engineering perspective, the hardest challenge was real-time state streaming:\n\n⚙️ The Backend: High-performance FastAPI compute engine solving the Lindblad Master Equation.\n⚡ The Bottleneck: Simulating quantum dissipation generates heavy numeric arrays. Pushing raw state matrices over standard JSON REST caused UI freezes.\n🖥️ The Frontend: Built with React 19 & TypeScript, ingesting asynchronous metric streams to render live state-fidelity heatmaps at smooth 60 FPS.\n🐳 Containerized with Docker & Docker Compose for reproducible benchmarks across environments.\n\nTakeaway: When streaming heavy numerical data, serialize efficiently and isolate your rendering pipeline early.\n\nGitHub repo: https://github.com/givemehat/qdms-quantum-market-simulator\n\nHave you ever faced browser rendering bottlenecks with high-frequency backend streaming?"
+    "content": "Can financial market crashes be modeled as an open quantum system experiencing decoherence?\n\nThat was the premise behind building QDMS (Quantum-Dissipative Market Simulator).\n\nFrom a software engineering perspective, the hardest challenge was real-time state streaming:\n\n1. Compute Engine: High-performance FastAPI compute engine solving the Lindblad Master Equation.\n2. Throughput Bottleneck: Simulating quantum dissipation generates heavy numeric arrays. Pushing raw state matrices over standard JSON REST caused UI freezes.\n3. Rendering Pipeline: Built with React 19 & TypeScript, ingesting asynchronous metric streams to render live state-fidelity heatmaps at smooth 60 FPS.\n4. Reproducibility: Containerized with Docker & Docker Compose for reproducible benchmarks across environments.\n\nTakeaway: When streaming heavy numerical data, serialize efficiently and isolate your rendering pipeline early.\n\nGitHub repo: https://github.com/givemehat/qdms-quantum-market-simulator\n\nHave you ever faced browser rendering bottlenecks with high-frequency backend streaming?"
   },
   {
     "id": "post-03-indramesh-sih",
     "title": "Quantum Risk & Enterprise Cryptography (IndraMesh - SIH)",
-    "tags": ["CyberSecurity", "SIH", "Python", "FastAPI", "Docker", "Cryptography"],
+    "tags": [
+      "CyberSecurity",
+      "SIH",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Cryptography"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-04-indramesh.png",
     "published": true,
     "buffer_post_id": "6b01fc94846b0ee907363c06",
     "scheduled_for": "2026-11-27T10:21:00.000Z",
-    "content": "Quantum computers will break classical asymmetric encryption. But how do enterprise networks even know which legacy cryptographic algorithms they are running today?\n\nBuilt for Smart India Hackathon (SIH 26164): Introducing IndraMesh—an Enterprise Cryptographic Discovery & Analysis Mesh (ECDAT).\n\n🔍 What it does:\n- Discovers cryptographic assets across codebases and network communications.\n- Evaluates Quantum Migration Urgency using Mosca's Theorem.\n- Automatically generates standard Cryptographic Bill of Materials (CBOM).\n\nBuilt with a FastAPI web console, containerized with Docker, and protected by automated scan pipelines on GitHub Actions.\n\nHackathon projects that solve genuine enterprise security problems create lasting engineering value.\n\nExplore the repo: https://github.com/givemehat/INDRAMESH"
+    "content": "Quantum computers will break classical asymmetric encryption. But how do enterprise networks even know which legacy cryptographic algorithms they are running today?\n\nBuilt for Smart India Hackathon (SIH 26164): Introducing IndraMesh—an Enterprise Cryptographic Discovery & Analysis Mesh (ECDAT).\n\nKey architectural capabilities:\n- Discovers cryptographic assets across codebases and network communications.\n- Evaluates Quantum Migration Urgency using Mosca's Theorem.\n- Automatically generates standard Cryptographic Bill of Materials (CBOM).\n\nBuilt with a FastAPI web console, containerized with Docker, and protected by automated scan pipelines on GitHub Actions.\n\nHackathon projects that solve genuine enterprise security problems create lasting engineering value.\n\nExplore the repo: https://github.com/givemehat/INDRAMESH"
   },
   {
     "id": "post-04-docusrag-fastapi",
     "title": "Production-Grade Async RAG Backend (DocuRAG-FastAPI)",
-    "tags": ["FastAPI", "AI", "Python", "VectorDatabase", "CleanCode"],
+    "tags": [
+      "FastAPI",
+      "AI",
+      "Python",
+      "VectorDatabase",
+      "CleanCode"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-05-docurag.png",
     "published": true,
     "buffer_post_id": "6b01fc94142c9575193f6df2",
@@ -42,7 +69,13 @@
   {
     "id": "post-05-student-mentorship",
     "title": "Practical Advice for Juniors Building Engineering Projects",
-    "tags": ["SoftwareEngineering", "SystemDesign", "FullStack", "CareerAdvice", "Mentorship"],
+    "tags": [
+      "SoftwareEngineering",
+      "SystemDesign",
+      "FullStack",
+      "CareerAdvice",
+      "Mentorship"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b01fe4f142c9575193ff80b",
@@ -52,7 +85,13 @@
   {
     "id": "post-06-kaggle-reproducibility",
     "title": "Reproducible ML & Computer Vision Lessons from Kaggle",
-    "tags": ["MachineLearning", "ComputerVision", "Kaggle", "DeepLearning", "AIResearch"],
+    "tags": [
+      "MachineLearning",
+      "ComputerVision",
+      "Kaggle",
+      "DeepLearning",
+      "AIResearch"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b020084846b0ee907378e83",
@@ -62,7 +101,13 @@
   {
     "id": "post-07-dspy-breakdown",
     "title": "Architecture Breakdown: Declarative LM Programming with Stanford DSPy",
-    "tags": ["MachineLearning", "AIArchitecture", "DSPy", "OpenSource", "SystemDesign"],
+    "tags": [
+      "MachineLearning",
+      "AIArchitecture",
+      "DSPy",
+      "OpenSource",
+      "SystemDesign"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-07-dspy.png",
     "published": true,
     "buffer_post_id": "6b02010c8bd84d596618a7d3",
@@ -72,11 +117,21 @@
   {
     "id": "post-08-open-for-opportunities",
     "title": "Open for Opportunities: Internships, Interviews, Discussions & Research Collaborations",
-    "tags": ["SoftwareEngineering", "MachineLearning", "OpenToWork", "SystemsEngineering", "Internship", "DeepLearning", "ResearchCollaboration", "Python", "TechCareers"],
+    "tags": [
+      "SoftwareEngineering",
+      "MachineLearning",
+      "OpenToWork",
+      "SystemsEngineering",
+      "Internship",
+      "DeepLearning",
+      "ResearchCollaboration",
+      "Python",
+      "TechCareers"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b0201c6cc364169c103bf47",
     "scheduled_for": "2026-12-10T09:46:00.000Z",
-    "content": "As we head into the upcoming engineering cycle, I’m actively opening up bandwidth for new technical challenges and collaborative research opportunities.\n\nOver the past few years, my work has centered around the intersection of scalable systems engineering, distributed backends, and applied machine learning:\n\n⚙️ High-Performance Backends & Systems:\n- Architecting asynchronous, low-latency microservices with FastAPI and Docker.\n- Designing real-time state streaming pipelines and granular, database-level security policies (Postgres RLS).\n\n🤖 Applied ML & Edge Engineering:\n- Designing and quantizing neural network architectures (INT8) for resource-constrained microcontrollers (bare-metal TinyML).\n- Reproducible computer vision pipelines—focusing on handling real-world distribution shift and data leakage beyond static benchmark datasets.\n\n🔒 Cryptographic Analysis & Quantum Systems:\n- Discovery tooling for Cryptographic Bill of Materials (CBOM) and post-quantum migration urgency analysis.\n- Numerical simulation and real-time state streaming of open quantum systems.\n\n🌐 Open Source & Community:\n- Upstream contributions to open-source frameworks (including Stanford DSPy and the CNCF OpenTelemetry Collector).\n\nI am actively exploring and open to:\n1. Software Engineering & ML Engineering Internship opportunities\n2. Systems & Applied AI Research collaborations\n3. Technical interviews, architectural discussions, and engineering problem-solving sessions\n\nIf your team, startup, or research group is tackling hard engineering problems, building resilient infrastructure, or pushing the envelope on applied machine learning, I’d love to connect.\n\nFeel free to reach out directly via DM or explore some of my open-source work:\nGitHub: https://github.com/givemehat\nKaggle: https://www.kaggle.com/sirrajnish\n\n#SoftwareEngineering #MachineLearning #OpenToWork #SystemsEngineering #Internship #DeepLearning #ResearchCollaboration #Python #TechCareers"
+    "content": "As we head into the upcoming engineering cycle, I’m actively opening up bandwidth for new technical challenges and collaborative research opportunities.\n\nOver the past few years, my work has centered around the intersection of scalable systems engineering, distributed backends, and applied machine learning:\n\nHigh-Performance Backends & Systems:\n- Architecting asynchronous, low-latency microservices with FastAPI and Docker.\n- Designing real-time state streaming pipelines and granular, database-level security policies (Postgres RLS).\n\nApplied ML & Edge Engineering:\n- Designing and quantizing neural network architectures (INT8) for resource-constrained microcontrollers (bare-metal TinyML).\n- Reproducible computer vision pipelines—focusing on handling real-world distribution shift and data leakage beyond static benchmark datasets.\n\nCryptographic Analysis & Quantum Systems:\n- Discovery tooling for Cryptographic Bill of Materials (CBOM) and post-quantum migration urgency analysis.\n- Numerical simulation and real-time state streaming of open quantum systems.\n\nOpen Source & Community:\n- Upstream contributions to open-source frameworks (including Stanford DSPy and the CNCF OpenTelemetry Collector).\n\nI am actively exploring and open to:\n1. Software Engineering & ML Engineering Internship opportunities\n2. Systems & Applied AI Research collaborations\n3. Technical interviews, architectural discussions, and engineering problem-solving sessions\n\nIf your team, startup, or research group is tackling hard engineering problems, building resilient infrastructure, or pushing the envelope on applied machine learning, I’d love to connect.\n\nFeel free to reach out directly via DM or explore some of my open-source work:\nGitHub: https://github.com/givemehat\nKaggle: https://www.kaggle.com/sirrajnish\n\n#SoftwareEngineering #MachineLearning #OpenToWork #SystemsEngineering #Internship #DeepLearning #ResearchCollaboration #Python #TechCareers"
   }
 ]
