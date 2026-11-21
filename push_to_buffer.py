@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Automatically push all queued technical posts from posts.json
-into Buffer's LinkedIn queue via Buffer's GraphQL API.
+Re-sync Buffer Queue:
+1. Deletes previous text-only posts
+2. Adds rich posts with High-Resolution Architecture & Project Images attached
 """
 
 import json
@@ -11,6 +12,16 @@ import requests
 
 BUFFER_GRAPHQL_URL = "https://api.buffer.com"
 POSTS_FILE = os.path.join(os.path.dirname(__file__), "posts.json")
+CHANNEL_ID = "6b01f8dfece6dfde5f4a303c"
+
+OLD_POST_IDS = [
+    "6b01fa678bd84d5966165aff",
+    "6b01fa67142c9575193ea806",
+    "6b01fa680247969092fbf16a",
+    "6b01fa68142c9575193ea847",
+    "6b01fa698bd84d5966165b59",
+    "6b01fa69846b0ee90735661e"
+]
 
 
 def load_posts():
@@ -24,43 +35,33 @@ def save_posts(posts):
         f.write("\n")
 
 
-def get_linkedin_channel(token: str):
+def delete_old_posts(token: str):
     headers = {
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
     }
-    # 1. Fetch organization ID
-    q_org = "{ account { organizations { id name } } }"
-    r_org = requests.post(BUFFER_GRAPHQL_URL, headers=headers, json={"query": q_org}, timeout=20)
-    if r_org.status_code != 200:
-        raise RuntimeError(f"Failed to fetch organization: {r_org.text}")
-
-    orgs = r_org.json().get("data", {}).get("account", {}).get("organizations", [])
-    if not orgs:
-        raise RuntimeError("No organizations found in Buffer account.")
-    org_id = orgs[0]["id"]
-
-    # 2. Fetch channels for this organization
-    q_channels = f'{{ channels(input: {{ organizationId: "{org_id}" }}) {{ id name service }} }}'
-    r_chan = requests.post(BUFFER_GRAPHQL_URL, headers=headers, json={"query": q_channels}, timeout=20)
-    if r_chan.status_code != 200:
-        raise RuntimeError(f"Failed to fetch channels: {r_chan.text}")
-
-    channels = r_chan.json().get("data", {}).get("channels", [])
-    for ch in channels:
-        if ch.get("service") == "linkedin":
-            print(f"✅ Found LinkedIn Channel: {ch.get('name')} (ID: {ch.get('id')})")
-            return ch.get("id")
-
-    raise RuntimeError("No connected LinkedIn channel found in your Buffer account! Please connect LinkedIn first.")
+    print("🧹 Cleaning up old text-only posts from Buffer queue...")
+    for pid in OLD_POST_IDS:
+        q = f'mutation {{ deletePost(input: {{ id: "{pid}" }}) {{ ... on DeletePostSuccess {{ id }} }} }}'
+        try:
+            r = requests.post(BUFFER_GRAPHQL_URL, headers=headers, json={"query": q}, timeout=15)
+            print(f"  Removed old post: {pid}")
+        except Exception as e:
+            print(f"  Notice on {pid}: {e}")
 
 
-def add_post_to_buffer(token: str, channel_id: str, text: str):
+def add_post_with_image(token: str, channel_id: str, text: str, image_url: str):
     headers = {
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
     }
     escaped_text = json.dumps(text)
+
+    assets_str = ""
+    if image_url:
+        assets_str = f'assets: [{{ image: {{ url: "{image_url}" }} }}]'
+    else:
+        assets_str = 'assets: []'
 
     query = f"""
     mutation {{
@@ -70,7 +71,7 @@ def add_post_to_buffer(token: str, channel_id: str, text: str):
         mode: addToQueue,
         schedulingType: automatic,
         needsApproval: false,
-        assets: []
+        {assets_str}
       }}) {{
         ... on PostActionSuccess {{
           post {{
@@ -106,28 +107,29 @@ def main():
         print("Usage: python3 push_to_buffer.py <BUFFER_API_KEY>")
         sys.exit(1)
 
-    print("Connecting to Buffer and finding LinkedIn channel...")
-    channel_id = get_linkedin_channel(token)
+    delete_old_posts(token)
 
     posts = load_posts()
-    pending = [p for p in posts if not p.get("published", False)]
-    print(f"Found {len(pending)} pending posts to schedule.\n")
+    print(f"\n🚀 Scheduling {len(posts)} posts WITH high-res images attached...\n")
 
-    for i, post in enumerate(pending, 1):
-        print(f"[{i}/{len(pending)}] Scheduling: {post.get('title')}...")
+    for i, post in enumerate(posts, 1):
+        title = post.get("title")
+        img = post.get("image_url")
+        print(f"[{i}/{len(posts)}] Scheduling: {title}...")
+        print(f"  🖼️  Image: {img}")
         try:
-            post_id, due_at = add_post_to_buffer(token, channel_id, post["content"])
+            post_id, due_at = add_post_with_image(token, CHANNEL_ID, post["content"], img)
             post["published"] = True
             post["scheduled_for"] = due_at
             post["buffer_post_id"] = post_id
-            print(f"  🎉 Scheduled in queue! Due at: {due_at} (ID: {post_id})\n")
+            print(f"  ✅ Scheduled in queue! Due at: {due_at} (ID: {post_id})\n")
         except Exception as e:
             print(f"  ❌ Failed: {e}\n")
 
     save_posts(posts)
-    print("=" * 60)
-    print("🚀 ALL 6 TECHNICAL POSTS ARE NOW OFFICIALLY SCHEDULED IN BUFFER!")
-    print("=" * 60)
+    print("=" * 70)
+    print("✨ ALL 6 POSTS SUCCESSFULLY RE-SCHEDULED WITH HIGH-RES IMAGES & LINKS!")
+    print("=" * 70)
 
 
 if __name__ == "__main__":

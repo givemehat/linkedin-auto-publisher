@@ -9,11 +9,12 @@
       "SystemDesign",
       "OpenSource"
     ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-01-gbu.png",
     "published": true,
     "published_at": null,
     "content": "Most college projects stop at a basic CRUD Todo or clone app.\n\nRecently, I tackled an actual enterprise organizational problem: designing an end-to-end Central Stores & Inventory ERP for Gautam Buddha University (GBU).\n\nHere is how we designed the entire tripartite lifecycle:\n\n🔹 The Flow: Department Requisition ➔ Director Approval ➔ Purchase Order (PO) ➔ Goods Receipt Note (GRN) ➔ Material Condemnations (Write-offs).\n🔹 Data Integrity: Implemented SQLAlchemy 2.0 with Alembic migrations to handle automated weighted-average cost valuation.\n🔹 Audit Trail: Financial and movement audit logs are strictly append-only.\n🔹 Strict RBAC: Multi-tier role-based access using FastAPI & Pydantic v2 to ensure unauthorized roles cannot approve procurement stages.\n\nThe biggest takeaway? Building for real organizations isn't about fancy UI—it's about strict state machines, validation, and transactional consistency.\n\nFull architecture & code: https://github.com/givemehat/gbu-inventory-portal\n\nWhat is the hardest edge case you've handled when building role-based approval workflows?",
-    "scheduled_for": "2026-11-25T08:50:00.000Z",
-    "buffer_post_id": "6b01fa678bd84d5966165aff"
+    "scheduled_for": "2026-12-02T08:50:00.000Z",
+    "buffer_post_id": "6b01fc920247969092fcb866"
   },
   {
     "id": "post-02-synqsquad-rls",
@@ -25,11 +26,12 @@
       "WebSecurity",
       "Supabase"
     ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-02-synqsquad.png",
     "published": true,
     "published_at": null,
     "content": "Why we shifted authorization from API middleware directly to PostgreSQL Row Level Security (RLS):\n\nWhile engineering SynqSquad (RIVQ)—a verified platform matching hackathon teammates and research collaborators—data isolation was critical.\n\nIn standard architectures:\nClient ➔ Express / Route Middleware ➔ Check Auth ➔ Fetch Data\n\nThe vulnerability? If an engineer forgets auth middleware on even one internal route, sensitive talent profiles or unlisted requisitions leak.\n\nSo we changed the paradigm with Next.js 16 + React 19 + Supabase:\n\n1. Authorization is baked directly into the PostgreSQL engine using RLS policies.\n2. Even if an endpoint is queried improperly, the database itself denies access to rows that don't belong to the authenticated session.\n3. Zero-trust architecture paired with Google OAuth on verified domains.\n\nStop relying only on your application layer for security. Let your database do what it was engineered to do.\n\nCodebase: https://github.com/givemehat/synqsquad\n\nHow do you prefer handling granular data authorization in modern full-stack apps?",
-    "scheduled_for": "2026-11-26T09:46:00.000Z",
-    "buffer_post_id": "6b01fa67142c9575193ea806"
+    "scheduled_for": "2026-12-03T09:46:00.000Z",
+    "buffer_post_id": "6b01fc93d5eabfb8cc5b0cef"
   },
   {
     "id": "post-03-qdms-streaming",
@@ -42,11 +44,12 @@
       "QuantitativeFinance",
       "Performance"
     ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-03-qdms.png",
     "published": true,
     "published_at": null,
     "content": "Can financial market crashes be modeled as an open quantum system experiencing decoherence?\n\nThat was the premise behind building QDMS (Quantum-Dissipative Market Simulator).\n\nFrom a software engineering perspective, the hardest challenge was real-time state streaming:\n\n⚙️ The Backend: High-performance FastAPI compute engine solving the Lindblad Master Equation.\n⚡ The Bottleneck: Simulating quantum dissipation generates heavy numeric arrays. Pushing raw state matrices over standard JSON REST caused UI freezes.\n🖥️ The Frontend: Built with React 19 & TypeScript, ingesting asynchronous metric streams to render live state-fidelity heatmaps at smooth 60 FPS.\n🐳 Containerized with Docker & Docker Compose for reproducible benchmarks across environments.\n\nTakeaway: When streaming heavy numerical data, serialize efficiently and isolate your rendering pipeline early.\n\nGitHub repo: https://github.com/givemehat/qdms-quantum-market-simulator\n\nHave you ever faced browser rendering bottlenecks with high-frequency backend streaming?",
-    "scheduled_for": "2026-11-27T10:21:00.000Z",
-    "buffer_post_id": "6b01fa680247969092fbf16a"
+    "scheduled_for": "2026-12-04T10:21:00.000Z",
+    "buffer_post_id": "6b01fc930247969092fcb8a5"
   },
   {
     "id": "post-04-indramesh-sih",
@@ -59,11 +62,12 @@
       "Docker",
       "Cryptography"
     ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-04-indramesh.png",
     "published": true,
     "published_at": null,
     "content": "Quantum computers will break classical asymmetric encryption. But how do enterprise networks even know which legacy cryptographic algorithms they are running today?\n\nBuilt for Smart India Hackathon (SIH 26164): Introducing IndraMesh—an Enterprise Cryptographic Discovery & Analysis Mesh (ECDAT).\n\n🔍 What it does:\n- Discovers cryptographic assets across codebases and network communications.\n- Evaluates Quantum Migration Urgency using Mosca's Theorem.\n- Automatically generates standard Cryptographic Bill of Materials (CBOM).\n\nBuilt with a FastAPI web console, containerized with Docker, and protected by automated scan pipelines on GitHub Actions.\n\nHackathon projects that solve genuine enterprise security problems create lasting engineering value.\n\nExplore the repo: https://github.com/givemehat/INDRAMESH",
-    "scheduled_for": "2026-12-02T08:50:00.000Z",
-    "buffer_post_id": "6b01fa68142c9575193ea847"
+    "scheduled_for": "2026-12-09T08:50:00.000Z",
+    "buffer_post_id": "6b01fc94846b0ee907363c06"
   },
   {
     "id": "post-05-docusrag-fastapi",
@@ -75,11 +79,12 @@
       "VectorDatabase",
       "CleanCode"
     ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-05-docurag.png",
     "published": true,
     "published_at": null,
     "content": "Moving AI backends from Jupyter notebooks to production is where real backend engineering begins.\n\nHere are 4 architectural decisions we implemented in DocuRAG-FastAPI (an async RAG pipeline powered by ChromaDB & FastAPI):\n\n1. Lifespan Context Managers: Initialized vector stores and model weights via FastAPI's @asynccontextmanager lifespan. Loaded exactly once on server startup to eliminate connection thrashing.\n2. Dependency Injection: Injected global database clients cleanly into route handlers using Depends() for testability.\n3. Async File I/O: Handled document uploads via `aiofiles` to stream files to disk without blocking the main event loop.\n4. Strict Config Enforcing: Enforced environment configurations at startup using pydantic-settings, preventing silent runtime crashes in production.\n\nClean architecture makes AI systems scalable, predictable, and maintainable.\n\nSource code: https://github.com/givemehat/DocuRAG-FastAPI\n\nWhat is your go-to pattern for managing heavy DB connections in FastAPI?",
-    "scheduled_for": "2026-12-03T09:46:00.000Z",
-    "buffer_post_id": "6b01fa698bd84d5966165b59"
+    "scheduled_for": "2026-12-10T09:46:00.000Z",
+    "buffer_post_id": "6b01fc94142c9575193f6df2"
   },
   {
     "id": "post-06-bounty-radar",
@@ -91,10 +96,11 @@
       "Web3",
       "Python"
     ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-06-bounty.png",
     "published": true,
     "published_at": null,
     "content": "Why run expensive 24/7 cloud servers when GitHub Actions can act as your autonomous cron engine for free?\n\nI built Bounty-Radar: an autonomous agent that monitors open Web3 bounties and CNCF issues around the clock.\n\nKey architectural highlights:\n⚡ 100% Serverless: Scheduled on GitHub Actions cron triggers—zero infrastructure bills.\n🛡️ State Persistence: Tracks previously seen issue IDs using automated git commits back to the repo, ensuring zero duplicate alerts.\n📨 Real-time Webhooks: Delivers high-priority matches directly via targeted notifications.\n\nAutomation doesn't need complex Kubernetes clusters. Simple, well-designed serverless pipelines often win.\n\nRepo: https://github.com/givemehat/bounty-radar\n\nWhat is your favorite unconventional use case for GitHub Actions?",
-    "scheduled_for": "2026-12-04T10:21:00.000Z",
-    "buffer_post_id": "6b01fa69846b0ee90735661e"
+    "scheduled_for": "2026-12-11T10:21:00.000Z",
+    "buffer_post_id": "6b01fc95846b0ee907363c60"
   }
 ]
