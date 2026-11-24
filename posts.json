@@ -84,8 +84,8 @@
       "Cryptography"
     ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-04-indramesh.png",
-    "published": true,
-    "buffer_post_id": "6b01fc94846b0ee907363c06",
+    "published": false,
+    "buffer_post_id": null,
     "scheduled_for": "2026-12-02T03:30:00.000Z",
     "scheduled_human_ist": "Wednesday, 02 Dec 2026, 09:00 AM IST",
     "content": "Quantum computers will break classical asymmetric encryption. But how do enterprise networks even know which legacy cryptographic algorithms they are running today?\n\nBuilt for Smart India Hackathon (SIH 26164): Introducing IndraMesh—an Enterprise Cryptographic Discovery & Analysis Mesh (ECDAT).\n\nKey architectural capabilities:\n- Discovers cryptographic assets across codebases and network communications.\n- Evaluates Quantum Migration Urgency using Mosca's Theorem.\n- Automatically generates standard Cryptographic Bill of Materials (CBOM).\n\nBuilt with a FastAPI web console, containerized with Docker, and protected by automated scan pipelines on GitHub Actions.\n\nHackathon projects that solve genuine enterprise security problems create lasting engineering value.\n\nExplore the repo: https://github.com/givemehat/INDRAMESH"
