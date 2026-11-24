@@ -83,9 +83,9 @@
       "CompetitiveProgramming",
       "AI"
     ],
-    "image_url": null,
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-08-kaggle-banner.png",
     "published": true,
-    "buffer_post_id": "6b05405af1f04351232cc85b",
+    "buffer_post_id": "6b0540bc060d9b64825824f2",
     "scheduled_for": "2026-12-02T03:30:00.000Z",
     "scheduled_human_ist": "Wednesday, 02 Dec 2026, 09:00 AM IST",
     "content": "The discipline of competitive machine learning on Kaggle.\n\nOver the past few months, spending time on Kaggle (kaggle.com/sirrajnish) has completely reshaped how I approach applied ML and production data systems.\n\nWhen you compete against thousands of engineers globally, you quickly realize that model architecture is only 20% of the game. The real edge comes from:\n\n1. Systematic Validation Strategy:\nNever trusting public leaderboard feedback blindly. Designing cross-validation schemes (Stratified K-Fold / GroupKFold) that strictly replicate the unseen test distribution is the only way to prevent post-shakeup collapse.\n\n2. Feature Engineering & Signal Discovery:\nFeature interaction, domain-specific aggregations, and target encoding out-perform naive deep learning on tabular problems almost every time.\n\n3. Ensemble Diversity:\nBlending predictions across diverse model paradigms (LightGBM, XGBoost, CatBoost, and GPU neural nets) rather than averaging identical trees.\n\n4. Automation & Daily Discipline:\nBuilt an automated local daemon that continuously tracks benchmark metrics, distribution drift (PSI), and pipeline health.\n\nGrateful for the Kaggle community and the continuous learning curve.\n\nProfile: https://www.kaggle.com/sirrajnish\n\n#MachineLearning #Kaggle #DataScience #DeepLearning #CompetitiveProgramming #AI"
