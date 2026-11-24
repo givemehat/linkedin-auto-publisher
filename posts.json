@@ -73,22 +73,22 @@
     "content": "As we head into the upcoming engineering cycle, I’m actively opening up bandwidth for new technical challenges and collaborative research opportunities.\n\nOver the past few years, my work has centered around the intersection of scalable systems engineering, distributed backends, and applied machine learning:\n\nHigh-Performance Backends & Systems:\n- Architecting asynchronous, low-latency microservices with FastAPI and Docker.\n- Designing real-time state streaming pipelines and granular, database-level security policies (Postgres RLS).\n\nApplied ML & Edge Engineering:\n- Designing and quantizing neural network architectures (INT8) for resource-constrained microcontrollers (bare-metal TinyML).\n- Reproducible computer vision pipelines—focusing on handling real-world distribution shift and data leakage beyond static benchmark datasets.\n\nCryptographic Analysis & Quantum Systems:\n- Discovery tooling for Cryptographic Bill of Materials (CBOM) and post-quantum migration urgency analysis.\n- Numerical simulation and real-time state streaming of open quantum systems.\n\nOpen Source & Community:\n- Upstream contributions to open-source frameworks (including Stanford DSPy and the CNCF OpenTelemetry Collector).\n\nI am actively exploring and open to:\n1. Software Engineering & ML Engineering Internship opportunities\n2. Systems & Applied AI Research collaborations\n3. Technical interviews, architectural discussions, and engineering problem-solving sessions\n\nIf your team, startup, or research group is tackling hard engineering problems, building resilient infrastructure, or pushing the envelope on applied machine learning, I’d love to connect.\n\nFeel free to reach out directly via DM or explore some of my open-source work:\nGitHub: https://github.com/givemehat\nKaggle: https://www.kaggle.com/sirrajnish\n\n#SoftwareEngineering #MachineLearning #OpenToWork #SystemsEngineering #Internship #DeepLearning #ResearchCollaboration #Python #TechCareers"
   },
   {
-    "id": "post-03-indramesh-sih",
-    "title": "Quantum Risk & Enterprise Cryptography (IndraMesh - SIH)",
+    "id": "post-kaggle-competitive-ml",
+    "title": "The Discipline of Competitive Machine Learning on Kaggle",
     "tags": [
-      "CyberSecurity",
-      "SIH",
-      "Python",
-      "FastAPI",
-      "Docker",
-      "Cryptography"
+      "MachineLearning",
+      "Kaggle",
+      "DataScience",
+      "DeepLearning",
+      "CompetitiveProgramming",
+      "AI"
     ],
-    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-04-indramesh.png",
-    "published": false,
-    "buffer_post_id": null,
+    "image_url": null,
+    "published": true,
+    "buffer_post_id": "6b05405af1f04351232cc85b",
     "scheduled_for": "2026-12-02T03:30:00.000Z",
     "scheduled_human_ist": "Wednesday, 02 Dec 2026, 09:00 AM IST",
-    "content": "Quantum computers will break classical asymmetric encryption. But how do enterprise networks even know which legacy cryptographic algorithms they are running today?\n\nBuilt for Smart India Hackathon (SIH 26164): Introducing IndraMesh—an Enterprise Cryptographic Discovery & Analysis Mesh (ECDAT).\n\nKey architectural capabilities:\n- Discovers cryptographic assets across codebases and network communications.\n- Evaluates Quantum Migration Urgency using Mosca's Theorem.\n- Automatically generates standard Cryptographic Bill of Materials (CBOM).\n\nBuilt with a FastAPI web console, containerized with Docker, and protected by automated scan pipelines on GitHub Actions.\n\nHackathon projects that solve genuine enterprise security problems create lasting engineering value.\n\nExplore the repo: https://github.com/givemehat/INDRAMESH"
+    "content": "The discipline of competitive machine learning on Kaggle.\n\nOver the past few months, spending time on Kaggle (kaggle.com/sirrajnish) has completely reshaped how I approach applied ML and production data systems.\n\nWhen you compete against thousands of engineers globally, you quickly realize that model architecture is only 20% of the game. The real edge comes from:\n\n1. Systematic Validation Strategy:\nNever trusting public leaderboard feedback blindly. Designing cross-validation schemes (Stratified K-Fold / GroupKFold) that strictly replicate the unseen test distribution is the only way to prevent post-shakeup collapse.\n\n2. Feature Engineering & Signal Discovery:\nFeature interaction, domain-specific aggregations, and target encoding out-perform naive deep learning on tabular problems almost every time.\n\n3. Ensemble Diversity:\nBlending predictions across diverse model paradigms (LightGBM, XGBoost, CatBoost, and GPU neural nets) rather than averaging identical trees.\n\n4. Automation & Daily Discipline:\nBuilt an automated local daemon that continuously tracks benchmark metrics, distribution drift (PSI), and pipeline health.\n\nGrateful for the Kaggle community and the continuous learning curve.\n\nProfile: https://www.kaggle.com/sirrajnish\n\n#MachineLearning #Kaggle #DataScience #DeepLearning #CompetitiveProgramming #AI"
   },
   {
     "id": "post-06-kaggle-reproducibility",
