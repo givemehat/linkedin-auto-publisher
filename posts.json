@@ -2,7 +2,14 @@
   {
     "id": "post-01-drone-docking",
     "title": "Camera-Free TinyML Drone Neural Docking (with Himanshu Patel)",
-    "tags": ["TinyML", "EmbeddedSystems", "Robotics", "Drones", "EdgeAI", "OpenSource"],
+    "tags": [
+      "TinyML",
+      "EmbeddedSystems",
+      "Robotics",
+      "Drones",
+      "EdgeAI",
+      "OpenSource"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/efficient-neural-docking/main/figs/drone_docking_system.jpeg",
     "published": true,
     "buffer_post_id": "6b02002bd864a0110572c0e8",
@@ -11,20 +18,32 @@
     "content": "Most autonomous drones rely on optical cameras and fiducial markers (like AprilTags) for landing pad docking.\n\nWhile accurate under ideal lighting, cameras create major bottlenecks on lightweight micro-aerial platforms:\n- 5W–15W compute power drain on companion computers (Raspberry Pi/Jetson).\n- Optical failure in low-light, dust, prop-wash, or lens occlusion.\n- Added payload weight that severely shortens flight endurance.\n\nTogether with Himanshu Patel, we built a camera-free TinyML alternative:\n\nArchitecture: Multi-Sensor Neural Docking:\nInstead of heavy cameras, we instrumented the airframe with 4 directional infrared (IR) proximity sensors feeding an ultra-compact feedforward neural network.\n\nThe Engineering Constraints:\n- Quantized down to 8-bit integers (INT8) running on bare-metal microcontrollers (ESP32 / ARM Cortex-M).\n- Flash footprint under 3 KB (<3 KB!).\n- Power consumption under 300 mW (nearly 95% reduction in power compared to companion computers).\n\nOpen-source code, hardware architecture, and firmware benchmarks:\nhttps://github.com/givemehat/efficient-neural-docking\n\nAlways open to connect with developers building at the intersection of TinyML, embedded robotics, and edge AI.\n\n#TinyML #EmbeddedSystems #Robotics #Drones #EdgeAI #OpenSource #DeepLearning"
   },
   {
-    "id": "post-02-qdms-streaming",
-    "title": "Real-time State Streaming (QDMS)",
-    "tags": ["Python", "FastAPI", "React", "Docker", "QuantitativeFinance", "Performance"],
-    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-03-qdms.png",
+    "id": "post-worldquant-bronze",
+    "title": "WorldQuant Challenge: Bronze Level Milestone & Alpha Research Takeaways",
+    "tags": [
+      "QuantitativeFinance",
+      "WorldQuantBRAIN",
+      "AlphaGeneration",
+      "AlgorithmicTrading",
+      "StatisticalArbitrage"
+    ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/worldquant-bronze.png",
     "published": true,
-    "buffer_post_id": "6b01fc930247969092fcb8a5",
+    "buffer_post_id": "6b053c8ef1f04351232b91b7",
     "scheduled_for": "2026-11-25T03:30:00.000Z",
     "scheduled_human_ist": "Wednesday, 25 Nov 2026, 09:00 AM IST",
-    "content": "Can financial market crashes be modeled as an open quantum system experiencing decoherence?\n\nThat was the premise behind building QDMS (Quantum-Dissipative Market Simulator).\n\nFrom a software engineering perspective, the hardest challenge was real-time state streaming:\n\n1. Compute Engine: High-performance FastAPI compute engine solving the Lindblad Master Equation.\n2. Throughput Bottleneck: Simulating quantum dissipation generates heavy numeric arrays. Pushing raw state matrices over standard JSON REST caused UI freezes.\n3. Rendering Pipeline: Built with React 19 & TypeScript, ingesting asynchronous metric streams to render live state-fidelity heatmaps at smooth 60 FPS.\n4. Reproducibility: Containerized with Docker & Docker Compose for reproducible benchmarks across environments.\n\nTakeaway: When streaming heavy numerical data, serialize efficiently and isolate your rendering pipeline early.\n\nGitHub repo: https://github.com/givemehat/qdms-quantum-market-simulator\n\nHave you ever faced browser rendering bottlenecks with high-frequency backend streaming?"
+    "content": "Reached Bronze Level in the WorldQuant Challenge.\n\nDeveloping quantitative alphas on the WorldQuant BRAIN platform has been one of the most intellectually rigorous exercises in mathematical modeling and empirical signal discovery.\n\nUnlike standard machine learning benchmarks where loss functions are well-behaved, alpha research in global financial markets operates under extreme noise and non-stationary regimes:\n\n1. Hypothesis-Driven Formulation:\nEvery predictive model must stem from a grounded financial hypothesis—whether exploiting market microstructure inefficiencies, liquidity anomalies, or fundamental factor divergences.\n\n2. Mitigating Overfitting & Lookahead Bias:\nIt is easy to generate a high backtest Sharpe ratio through parameter tuning (p-hacking). The real discipline lies in constructing signals that survive out-of-sample data, market regime shifts, and transaction cost realities.\n\n3. Factor Neutralization & Correlation Constraints:\nA high-performing alpha must demonstrate true orthogonal predictive power. Signals must be neutralized against common risk factors (industry, market beta, size) to avoid uncompensated systematic exposure.\n\nNext milestone: Unlocking advanced alpha templates and scaling towards Silver User status (5,000 points) on the path to the BRAIN Research Consultant track.\n\nGrateful to Nitish Maini and the WorldQuant team for building an exceptional platform for quantitative researchers worldwide.\n\n#QuantitativeFinance #WorldQuantBRAIN #AlphaGeneration #AlgorithmicTrading #StatisticalArbitrage #QuantitativeResearch #Finance"
   },
   {
     "id": "post-05-student-mentorship",
     "title": "Practical Advice for Juniors Building Engineering Projects",
-    "tags": ["SoftwareEngineering", "SystemDesign", "FullStack", "CareerAdvice", "Mentorship"],
+    "tags": [
+      "SoftwareEngineering",
+      "SystemDesign",
+      "FullStack",
+      "CareerAdvice",
+      "Mentorship"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b01fe4f142c9575193ff80b",
@@ -35,7 +54,17 @@
   {
     "id": "post-08-open-for-opportunities",
     "title": "Open for Opportunities: Internships, Interviews, Discussions & Research Collaborations",
-    "tags": ["SoftwareEngineering", "MachineLearning", "OpenToWork", "SystemsEngineering", "Internship", "DeepLearning", "ResearchCollaboration", "Python", "TechCareers"],
+    "tags": [
+      "SoftwareEngineering",
+      "MachineLearning",
+      "OpenToWork",
+      "SystemsEngineering",
+      "Internship",
+      "DeepLearning",
+      "ResearchCollaboration",
+      "Python",
+      "TechCareers"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b0201c6cc364169c103bf47",
@@ -46,7 +75,14 @@
   {
     "id": "post-03-indramesh-sih",
     "title": "Quantum Risk & Enterprise Cryptography (IndraMesh - SIH)",
-    "tags": ["CyberSecurity", "SIH", "Python", "FastAPI", "Docker", "Cryptography"],
+    "tags": [
+      "CyberSecurity",
+      "SIH",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Cryptography"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-04-indramesh.png",
     "published": true,
     "buffer_post_id": "6b01fc94846b0ee907363c06",
@@ -57,7 +93,13 @@
   {
     "id": "post-06-kaggle-reproducibility",
     "title": "Reproducible ML & Computer Vision Lessons from Kaggle",
-    "tags": ["MachineLearning", "ComputerVision", "Kaggle", "DeepLearning", "AIResearch"],
+    "tags": [
+      "MachineLearning",
+      "ComputerVision",
+      "Kaggle",
+      "DeepLearning",
+      "AIResearch"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b020084846b0ee907378e83",
@@ -68,7 +110,13 @@
   {
     "id": "post-04-docusrag-fastapi",
     "title": "Production-Grade Async RAG Backend (DocuRAG-FastAPI)",
-    "tags": ["FastAPI", "AI", "Python", "VectorDatabase", "CleanCode"],
+    "tags": [
+      "FastAPI",
+      "AI",
+      "Python",
+      "VectorDatabase",
+      "CleanCode"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-05-docurag.png",
     "published": true,
     "buffer_post_id": "6b01fc94142c9575193f6df2",
@@ -79,7 +127,13 @@
   {
     "id": "post-07-dspy-breakdown",
     "title": "Architecture Breakdown: Declarative LM Programming with Stanford DSPy",
-    "tags": ["MachineLearning", "AIArchitecture", "DSPy", "OpenSource", "SystemDesign"],
+    "tags": [
+      "MachineLearning",
+      "AIArchitecture",
+      "DSPy",
+      "OpenSource",
+      "SystemDesign"
+    ],
     "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-07-dspy.png",
     "published": true,
     "buffer_post_id": "6b02010c8bd84d596618a7d3",
@@ -90,7 +144,13 @@
   {
     "id": "post-09-opentelemetry-backpressure",
     "title": "Managing Telemetry Backpressure in High-Throughput Distributed Systems",
-    "tags": ["DistributedSystems", "OpenTelemetry", "Observability", "BackendEngineering", "SystemDesign"],
+    "tags": [
+      "DistributedSystems",
+      "OpenTelemetry",
+      "Observability",
+      "BackendEngineering",
+      "SystemDesign"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b026b95024796909221b865",
@@ -101,7 +161,13 @@
   {
     "id": "post-10-vllm-pagedattention",
     "title": "How PagedAttention Solved the LLM Serving Bottleneck (vLLM Breakdown)",
-    "tags": ["MachineLearning", "AIInfrastructure", "vLLM", "SystemDesign", "GPU"],
+    "tags": [
+      "MachineLearning",
+      "AIInfrastructure",
+      "vLLM",
+      "SystemDesign",
+      "GPU"
+    ],
     "image_url": null,
     "published": true,
     "buffer_post_id": "6b026b96cc364169c127bb2b",
@@ -112,7 +178,13 @@
   {
     "id": "post-11-quantum-nisq-noise",
     "title": "Simulating NISQ Noise in Quantum Classifiers (VQC vs QSVC)",
-    "tags": ["QuantumComputing", "MachineLearning", "DeepLearning", "Physics", "OpenSource"],
+    "tags": [
+      "QuantumComputing",
+      "MachineLearning",
+      "DeepLearning",
+      "Physics",
+      "OpenSource"
+    ],
     "image_url": null,
     "published": false,
     "buffer_post_id": null,
@@ -123,7 +195,13 @@
   {
     "id": "post-12-reading-large-codebases",
     "title": "Practical Advice: How to Read a 100k+ Line Codebase Without Getting Overwhelmed",
-    "tags": ["SoftwareEngineering", "Mentorship", "OpenSource", "Programming", "CareerAdvice"],
+    "tags": [
+      "SoftwareEngineering",
+      "Mentorship",
+      "OpenSource",
+      "Programming",
+      "CareerAdvice"
+    ],
     "image_url": null,
     "published": false,
     "buffer_post_id": null,
@@ -134,7 +212,14 @@
   {
     "id": "post-13-native-macos-habitflow",
     "title": "Architecture: Why Desktop Utilities Should Be Native (HabitFlow in Swift)",
-    "tags": ["macOS", "Swift", "Apple", "Performance", "SystemDesign", "OpenSource"],
+    "tags": [
+      "macOS",
+      "Swift",
+      "Apple",
+      "Performance",
+      "SystemDesign",
+      "OpenSource"
+    ],
     "image_url": null,
     "published": false,
     "buffer_post_id": null,
@@ -145,12 +230,36 @@
   {
     "id": "post-14-database-constraints",
     "title": "Why Database Constraints Beat Application Validation in Distributed Systems",
-    "tags": ["Databases", "PostgreSQL", "BackendEngineering", "SystemDesign", "SoftwareArchitecture"],
+    "tags": [
+      "Databases",
+      "PostgreSQL",
+      "BackendEngineering",
+      "SystemDesign",
+      "SoftwareArchitecture"
+    ],
     "image_url": null,
     "published": false,
     "buffer_post_id": null,
     "scheduled_for": "2026-12-23T03:30:00.000Z",
     "scheduled_human_ist": "Wednesday, 23 Dec 2026, 09:00 AM IST",
     "content": "Why relying solely on application-layer validation is a ticking time bomb for data integrity:\n\nEvery modern backend uses validation libraries: Pydantic, Zod, Joi, or ORM hooks. They validate input types and return clean 422 error responses. They are essential for client UX.\n\nHowever, application validation cannot protect data integrity in distributed environments:\n\n1. Concurrency & Race Conditions:\nChecking `if not db.query(User).filter_by(email=email).first()` in application code fails under concurrent requests. Two requests arriving simultaneously will both pass validation and write duplicate records. Only a unique database constraint guarantees atomicity.\n\n2. Multiple Ingress Paths:\nMicroservices evolve. Tomorrow, an internal admin CLI, a migration script, or a background worker will touch the database directly, bypassing your API validation layers entirely.\n\n3. Foreign Key Cascades & Partial Indexes:\nHandling cascading cleanups or conditional uniqueness in application logic requires manual transactions and distributed locks. The database engine executes foreign key checks and partial index constraints in microsecond C code.\n\nApplication validation exists for user feedback.\nDatabase constraints exist for absolute correctness.\n\nBuild defensively: use both, but never trust your application layer to enforce what your database engine was engineered to guarantee.\n\nWhat is the most subtle data corruption bug you've seen caused by missing database constraints?\n\n#Databases #PostgreSQL #BackendEngineering #SystemDesign #SoftwareArchitecture #DataEngineering"
+  },
+  {
+    "id": "post-02-qdms-streaming",
+    "title": "Real-time State Streaming (QDMS)",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "React",
+      "Docker",
+      "QuantitativeFinance",
+      "Performance"
+    ],
+    "image_url": "https://raw.githubusercontent.com/givemehat/linkedin-auto-publisher/main/assets/post-03-qdms.png",
+    "published": false,
+    "buffer_post_id": null,
+    "scheduled_for": "2026-12-25T03:30:00.000Z",
+    "scheduled_human_ist": "Friday, 25 Dec 2026, 09:00 AM IST",
+    "content": "Can financial market crashes be modeled as an open quantum system experiencing decoherence?\n\nThat was the premise behind building QDMS (Quantum-Dissipative Market Simulator).\n\nFrom a software engineering perspective, the hardest challenge was real-time state streaming:\n\n1. Compute Engine: High-performance FastAPI compute engine solving the Lindblad Master Equation.\n2. Throughput Bottleneck: Simulating quantum dissipation generates heavy numeric arrays. Pushing raw state matrices over standard JSON REST caused UI freezes.\n3. Rendering Pipeline: Built with React 19 & TypeScript, ingesting asynchronous metric streams to render live state-fidelity heatmaps at smooth 60 FPS.\n4. Reproducibility: Containerized with Docker & Docker Compose for reproducible benchmarks across environments.\n\nTakeaway: When streaming heavy numerical data, serialize efficiently and isolate your rendering pipeline early.\n\nGitHub repo: https://github.com/givemehat/qdms-quantum-market-simulator\n\nHave you ever faced browser rendering bottlenecks with high-frequency backend streaming?"
   }
 ]
